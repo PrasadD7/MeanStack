@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <style>
+        .outputPanel {
+            height: 200px;
+            width: 515px;
+            color: black;
+            background-color: lightgrey;
+            font-size: x-large;
+            text-align: right;
+        }
+
+        button {
+            width: 125px;
+            padding: 1px;
+        }
+    </style>
+    <script>
+        var opr1 = 0;
+        var opr2 = 0;
+        var operator = "";
+        var expr = "";
+        var result = 35;
+        function inputVal(num) {
+            console.log(num.value);
+            if (num.value == "C") {
+                document.getElementById("outputScreen").innerHTML = "";
+                result=0;
+                opr1=0;
+                opr2=0;
+                expr = "";
+                num.value = 0;
+            }
+            if ( num.value !="" && num.value == "+" || num.value == "*" || num.value == "-" || num.value == "/" || num.value == "%") {
+                operator = num.value;
+                expr = expr + operator;
+                document.getElementById("outputScreen").innerHTML += num.value;
+            } else {
+                if (opr1 == 0 || operator == "") {
+                    if(opr1==0){
+                    document.getElementById("outputScreen").innerHTML = "";
+                    }
+                    opr1 = opr1 + num.value;
+                    expr = opr1;
+                    document.getElementById("outputScreen").innerHTML += num.value;
+                }
+                else {
+                    opr2 = opr2 + num.value;
+                    expr = expr + opr2;
+                    document.getElementById("outputScreen").innerHTML = document.getElementById("outputScreen").innerHTML + num.value;
+                }
+
+            }
+
+            console.log(expr);
+        }
+        function calculate() {
+            var op1 = Number(opr1);
+            var op2 = Number(opr2);
+
+            if (op1 == 0 || operator == "" || op2 == 0) {
+                console.log("IN calculate() " + expr);
+                alert("Insufficient arguments");
+            }
+            switch (operator) {
+                case "+":
+                    result = op1 + op2;
+                    break;
+                case "-":
+                    result = op1 - op2;
+                    break;
+                case "/":
+                    result = op1 / op2;
+                    break;
+                case "%":
+                    result = op1 % op2;
+                    break;
+                case "*":
+                    result = op1 * op2;
+                    break;
+            }
+            opr1 = 0;
+            opr2 = 0;
+            operator = "";
+            document.getElementById("outputScreen").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="outputPanel" id="outputScreen">
+
+    </div>
+    <table>
+        <tr>
+            <td> <button style="color: darkorange;" onclick="inputVal(this)" value="C">C</button> </td>
+            <td> <button>Cancel</button></td>
+            <td> <button value="/" onclick="inputVal(this)">/</button></td>
+            <td> <button onclick="inputVal(this)" value="*">X</button></td>
+        </tr>
+        <tr>
+            <td> <button value="7" onclick="inputVal(this)">7</button> </td>
+            <td> <button value="8" onclick="inputVal(this)">8</button></td>
+            <td> <button value="9" onclick="inputVal(this)">9</button></td>
+            <td> <button value="-" onclick="inputVal(this)">-</button></td>
+        </tr>
+        <tr>
+            <td> <button value="4" onclick="inputVal(this)">4</button> </td>
+            <td> <button value="5" onclick="inputVal(this)">5</button></td>
+            <td> <button value="6" onclick="inputVal(this)">6</button></td>
+            <td> <button value="+" onclick="inputVal(this)">+</button></td>
+        </tr>
+        <tr>
+            <td> <button value="1" onclick="inputVal(this)">1</button> </td>
+            <td> <button value="2" onclick="inputVal(this)">2</button></td>
+            <td> <button value="3" onclick="inputVal(this)">3</button></td>
+            <td rowspan="2" colspan="2"> <button value="=" onclick="calculate()"
+                    style="height: 50;background-color:darkorange;"> = </button></td>
+        </tr>
+        <tr>
+            <td> <button value="%" onclick="inputVal(this)">%</button> </td>
+            <td> <button value="0" onclick="inputVal(this)">0</button></td>
+            <td> <button value="." onclick="inputVal(this)">.</button></td>
+
+        </tr>
+    </table>
+</body>
+
+</html>

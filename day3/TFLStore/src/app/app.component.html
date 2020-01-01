@@ -1,0 +1,31 @@
+<div>
+  <h1>{{company}}</h1>
+</div>
+<div>
+    <ul>
+    <label *ngFor="let item of flowers">
+      <img height="100px" width="100px" src="../assets/images/{{item.name}}.jpg" alt="">
+      <br>
+      {{item.name | uppercase }}
+      <!-- <input type="checkbox"  value="{{item.name}} " /> -->
+      <button type="submit" (click)="addItem(item)">Add To Cart</button>
+      <!-- {{item.quantity}} -->
+      <!-- <input type="number" name="quantity">  -->
+      <br>
+    </label>
+    </ul>
+  <label id="address">{{person.Address}}</label>
+<form action="">
+  <p >
+    Enter your adderess
+  </p>
+  <p>
+    <textarea name="addr" id="" cols="30" rows="10"  [(ngModel)]="person.Address"></textarea>
+  </p>
+</form>
+</div>
+<hr />
+<div>
+  <app-login></app-login> <app-login></app-login>
+  <p>Logged In As : {{person.Email}}</p>
+</div>

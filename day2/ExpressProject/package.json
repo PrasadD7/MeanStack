@@ -1,0 +1,23 @@
+{
+  "name": "expressproject",
+  "version": "1.0.0",
+  "description": "my first express project",
+  "main": "server.js",
+  "scripts": {
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrasadD7/myexpressproj.git"
+  },
+  "author": "Prasad Deshkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrasadD7/myexpressproj/issues"
+  },
+  "homepage": "https://github.com/PrasadD7/myexpressproj#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
