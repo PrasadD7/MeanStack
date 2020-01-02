@@ -1,0 +1,12 @@
+<p>login works!</p>
+<div>
+  <form action="">
+    <p>Username</p>
+    <input type="text" name="username" id="" [(ngModel)]="tempuser.username">
+    <p>Password</p>
+    <input type="password" name="password" id="" [(ngModel)]="tempuser.password">
+  </form>
+<div>
+  <a routerLink="/change-password" routerLinkActive="active" (click)="changePassword()">Change Password</a>
+</div>
+</div>

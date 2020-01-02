@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
   onClick():any{
     if (this.email == 'prasaddeshkar7@gmail.com' && this.password=='123') {
-      alert("Logged in as "+email);
+      alert("Logged in as "+this.email);
     } else {
       alert("Login failed ");
     }

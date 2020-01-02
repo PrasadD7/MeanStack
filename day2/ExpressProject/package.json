@@ -18,6 +18,10 @@
   "homepage": "https://github.com/PrasadD7/myexpressproj#readme",
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< HEAD
+=======
+    "http": "0.0.0",
+>>>>>>> 1fa9c5009923457f6afd36404c12f5fd6ee77bc8
     "path": "^0.12.7"
   }
 }
